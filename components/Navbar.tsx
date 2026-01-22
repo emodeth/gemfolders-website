@@ -4,12 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Logo from "./Logo";
 import { Button } from "./ui/button";
-
-const navLinks = [
-  { label: "Features", href: "#features" },
-  { label: "Pricing", href: "#pricing" },
-  { label: "FAQ", href: "#faq" },
-];
+import { navLinks } from "@/lib/data";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
