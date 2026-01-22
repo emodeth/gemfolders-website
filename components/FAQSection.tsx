@@ -3,29 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import FAQItem from "./FAQItem";
-
-const faqs = [
-  {
-    question: "Is my data safe?",
-    answer:
-      "Yes, your data is completely safe. We strictly follow privacy-first principles. Your chats and folder organization structures are primarily stored locally on your device. Any data synced for premium features is encrypted and securely stored. We never sell your personal data.",
-  },
-  {
-    question: "Can I cancel it whenever I want?",
-    answer:
-      "Absolutely. You can cancel your subscription at any time directly from your dashboard. If you cancel, you will maintain access to premium features until the end of your billing cycle. There are no cancellation fees.",
-  },
-  {
-    question: "What is your privacy policy?",
-    answer:
-      "Our privacy policy is simple: You own your data. We do not track your chat content or personal information. We only collect minimal usage statistics to improve the application stability. For a detailed breakdown, please visit our Privacy Policy page.",
-  },
-  {
-    question: "I have another question",
-    answer:
-      "We'd love to hear from you! If you have any other questions or need support, please contact our support team. We generally reply to all inquiries within 24 hours.",
-  },
-];
+import { faqs } from "@/lib/data";
 
 const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);

@@ -2,54 +2,7 @@
 
 import { motion } from "framer-motion";
 import PricingPlanItem from "./PricingPlanItem";
-
-const pricingPlans = [
-  {
-    name: "Monthly",
-    price: "$4.99",
-    period: "/ month",
-    description: "Perfect for trying out the extension",
-    features: [
-      "Unlimited Folders",
-      "Unlimited Bookmarks",
-      "Sync Between Devices",
-      "Priority Support",
-      "Cancel Anytime",
-    ],
-    cta: "Subscribe Monthly",
-    popular: false,
-  },
-  {
-    name: "Yearly",
-    price: "$29.99",
-    period: "/ year",
-    description: "Save 50% compared to monthly",
-    features: [
-      "Unlimited Folders",
-      "Unlimited Bookmarks",
-      "Sync Between Devices",
-      "Priority Support",
-      "7 Days Free Trial",
-    ],
-    cta: "Subscribe Yearly",
-    popular: true,
-  },
-  {
-    name: "Lifetime",
-    price: "$49.99",
-    period: "one-time",
-    description: "Pay once, use forever",
-    features: [
-      "Unlimited Folders",
-      "Unlimited Bookmarks",
-      "Sync Between Devices",
-      "Priority Support",
-      "Lifetime Updates",
-    ],
-    cta: "Get Lifetime Access",
-    popular: false,
-  },
-];
+import { pricingPlans } from "@/lib/data";
 
 const Pricing = () => {
   return (
