@@ -20,6 +20,16 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, href: string) => {
+    if (href.startsWith("#")) {
+      e.preventDefault();
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
   return (
     <header className="flex items-center justify-between w-full max-w-5xl px-10 mx-auto bg-transparent py-7">
       <div className="hidden lg:flex flex-row items-center justify-center gap-2">
@@ -46,6 +56,7 @@ const Navbar = () => {
               >
                 <Link
                   href={link.href}
+                  onClick={(e) => handleScroll(e, link.href)}
                   className="font-medium text-muted-foreground transition-all hover:text-muted-foreground/70"
                 >
                   {link.label}
@@ -57,7 +68,13 @@ const Navbar = () => {
               className={`overflow-hidden transition-all duration-500 ease-in-out ${isScrolled ? "max-w-[150px] opacity-100 translate-x-0" : "max-w-0 opacity-0 translate-x-12"
                 }`}
             >
-              <Button as="a" href="#download" size="sm" className="whitespace-nowrap text-[16px]">
+              <Button
+                as="a"
+                href="#download"
+                size="sm"
+                className="whitespace-nowrap text-[16px]"
+                onClick={(e: React.MouseEvent<HTMLAnchorElement>) => handleScroll(e, "#download")}
+              >
                 Download
               </Button>
             </div>
