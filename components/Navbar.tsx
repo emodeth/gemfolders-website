@@ -62,7 +62,7 @@ const Navbar = () => {
               className={`overflow-hidden transition-all duration-500 ease-in-out ${isScrolled ? "max-w-[150px] opacity-100 translate-x-0" : "max-w-0 opacity-0 translate-x-12"
                 }`}
             >
-              <Button as="a" href="#download" size="sm" className="whitespace-nowrap">
+              <Button as="a" href="#download" size="sm" className="whitespace-nowrap text-[16px]">
                 Download
               </Button>
             </div>
