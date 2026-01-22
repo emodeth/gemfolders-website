@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import VideoSection from "@/components/VideoSection";
 import Features from "@/components/Features";
+import Pricing from "@/components/Pricing";
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
         <HeroSection />
         <VideoSection />
         <Features />
+        <Pricing />
       </main>
     </div>
   );

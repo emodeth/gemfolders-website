@@ -65,7 +65,7 @@ const Feature = ({
                 </div>
               </div>
 
-              <div className="relative aspect-[4/3] md:aspect-[16/10] bg-muted/20">
+              <div className="relative aspect-4/3 md:aspect-16/10 bg-muted/20">
                 {mediaType === "video" ? (
                   <video
                     src={mediaSrc}
