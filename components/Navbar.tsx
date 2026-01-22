@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Logo from "./Logo";
+import { Button } from "./ui/button";
 
 const navLinks = [
   { label: "Features", href: "#features" },
@@ -15,7 +16,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      setIsScrolled(window.scrollY > 100);
     };
 
     handleScroll();
@@ -25,37 +26,49 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-        ? "bg-background/70 backdrop-blur-xl shadow-lg shadow-black/5"
-        : "bg-transparent"
-        }`}
-    >
-      <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8">
+    <header className="flex items-center justify-between w-full max-w-5xl px-10 mx-auto bg-transparent py-7">
+      <div className="hidden lg:flex flex-row items-center justify-center gap-2">
         <Logo />
+      </div>
 
-        <div className="flex items-center gap-8">
-          <ul className="hidden md:flex items-center gap-4">
+      <div className="fixed inset-x-0 z-50 flex items-center justify-center top-6">
+        <div
+          className={`mx-4 flex w-full items-center justify-center overflow-hidden rounded-full backdrop-blur-md transition-all duration-300 ease-out lg:w-auto ${isScrolled
+            ? "bg-background/60 dark:bg-background/40 px-4 py-3 lg:px-3 lg:py-2.5"
+            : "bg-background/40 dark:bg-background/20 px-3 py-2.5 lg:p-1.5 lg:py-2"
+            }`}
+          style={{
+            boxShadow: isScrolled
+              ? "rgba(17, 24, 28, 0.08) 0px 0px 0px 1px, rgba(17, 24, 28, 0.08) 0px 1px 2px -1px, rgba(17, 24, 28, 0.04) 0px 2px 4px"
+              : "rgba(17, 24, 28, 0.08) 0px 0px 0px 0px, rgba(17, 24, 28, 0.08) 0px 0px 0px 0px, rgba(17, 24, 28, 0.04) 0px 0px 0px",
+          }}
+        >
+          <ul className="flex flex-row justify-between w-full h-full gap-6 lg:flex-row lg:justify-start lg:gap-1">
             {navLinks.map((link) => (
-              <li key={link.label}>
+              <li
+                key={link.label}
+                className="hidden items-center justify-center px-2 py-0.5 lg:flex"
+              >
                 <Link
                   href={link.href}
-                  className="font-medium text-muted-foreground transition-all hover:text-muted-foreground/90 hover:bg-muted px-2 py-1 rounded-[4px]"
+                  className="font-medium text-muted-foreground transition-all hover:text-muted-foreground/70"
                 >
                   {link.label}
                 </Link>
               </li>
             ))}
-          </ul>
 
-          <Link
-            href="#download"
-            className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2 font-medium text-background transition-all hover:bg-primary/90"
-          >
-            <span>Download</span>
-          </Link>
+            <div
+              className={`overflow-hidden transition-all duration-500 ease-in-out ${isScrolled ? "max-w-[150px] opacity-100 translate-x-0" : "max-w-0 opacity-0 translate-x-12"
+                }`}
+            >
+              <Button as="a" href="#download" size="sm" className="whitespace-nowrap">
+                Download
+              </Button>
+            </div>
+          </ul>
         </div>
-      </nav>
+      </div>
     </header>
   );
 };
