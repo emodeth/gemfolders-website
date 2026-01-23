@@ -98,3 +98,11 @@ export const faqs = [
       "We'd love to hear from you! If you have any other questions or need support, please contact our support team. We generally reply to all inquiries within 24 hours.",
   },
 ];
+
+export const ctaData = {
+  title: "Ready to clear the clutter?",
+  description:
+    "Install Gem today and join thousands of people who've found browser nirvana.",
+  buttonText: "Add Gem to Chrome Free",
+  secondaryText: "No credit card required. Cancel anytime.",
+};
