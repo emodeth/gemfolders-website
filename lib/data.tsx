@@ -126,7 +126,7 @@ export const ctaData = {
 
 export const footerData = {
   description:
-    "The AI-powered Chrome extension that brings order to your digital life.",
+    "The Browser extension that brings order to your Gemini conversations.",
   copyright: "© 2026 Gem Folders. All rights reserved.",
   columns: [
     {
