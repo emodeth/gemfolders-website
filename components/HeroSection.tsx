@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
   return (
-    <section className="relative overflow-hidden pt-32 md:pt-40">
+    <section className="relative overflow-hidden pt-32">
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-primary/10 rounded-full blur-[120px] opacity-50" />
@@ -59,7 +59,7 @@ const HeroSection = () => {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <Button as="a" href="#download" className="text-2xl px-6 py-2.5">
+          <Button as="a" href="#download" className="text-2xl px-6 py-2.5 rounded-sm">
             Add to Browser
           </Button>
 

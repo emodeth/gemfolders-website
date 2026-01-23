@@ -5,7 +5,7 @@ import { featuresData } from "@/lib/data";
 
 const Features = () => {
   return (
-    <div id="features" className="flex flex-col">
+    <div id="features" className="flex flex-col pt-12">
       {featuresData.map((feature) => (
         <Feature key={feature.title} {...feature} />
       ))}
