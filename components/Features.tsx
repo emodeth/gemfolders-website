@@ -7,7 +7,7 @@ const Features = () => {
   return (
     <div id="features" className="flex flex-col pt-12">
       {featuresData.map((feature) => (
-        <Feature key={feature.title} {...feature} />
+        <Feature key={feature.alt} {...feature} />
       ))}
     </div>
   );

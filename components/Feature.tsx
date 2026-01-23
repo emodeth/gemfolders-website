@@ -4,10 +4,11 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 interface FeatureProps {
-  title: string;
+  title: React.ReactNode;
   description: string;
   mediaSrc: string;
   mediaType?: "image" | "video";
+  alt?: string;
   reversed?: boolean;
 }
 
@@ -16,6 +17,7 @@ const Feature = ({
   description,
   mediaSrc,
   mediaType = "image",
+  alt = "",
   reversed = false,
 }: FeatureProps) => {
   return (
@@ -41,7 +43,7 @@ const Feature = ({
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto lg:mx-0"
+              className="text-lg  text-secondary leading-relaxed max-w-2xl mx-auto lg:mx-0"
             >
               {description}
             </motion.p>
@@ -78,7 +80,7 @@ const Feature = ({
                   <div className="relative w-full h-full">
                     <Image
                       src={mediaSrc}
-                      alt={title}
+                      alt={alt}
                       fill
                       className="object-cover"
                       unoptimized={mediaSrc.endsWith('.gif')}

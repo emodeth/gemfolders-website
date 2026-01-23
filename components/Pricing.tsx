@@ -21,7 +21,7 @@ const Pricing = () => {
             transition={{ duration: 0.5 }}
             className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-foreground"
           >
-            Simple, Transparent Pricing
+            Simple, Transparent <span className="text-primary">Pricing</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}

@@ -28,7 +28,7 @@ const FAQSection = () => {
             transition={{ duration: 0.5 }}
             className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-foreground"
           >
-            Frequently Asked <span className="text-primary italic">Questions</span>
+            Frequently Asked <span className="text-primary">Questions</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}

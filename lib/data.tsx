@@ -1,3 +1,5 @@
+import React from "react";
+
 export const navLinks = [
   { label: "Features", href: "#features" },
   { label: "Pricing", href: "#pricing" },
@@ -6,24 +8,39 @@ export const navLinks = [
 
 export const featuresData = [
   {
-    title: "Organize Chats",
+    title: (
+      <>
+        <span className="text-primary">Organize</span> Chats
+      </>
+    ),
     description:
       "Create folders and sub-folders to keep your chats structured. Drag and drop conversations to organize them exactly how you want. Sync your structure across all your devices seamlessly.",
     mediaSrc: "/images/feature-1.png",
+    alt: "Organize Chats",
     reversed: false,
   },
   {
-    title: "Bookmark Important Items",
+    title: (
+      <>
+        <span className="text-primary">Bookmark</span> Important Items
+      </>
+    ),
     description:
       "Save specific messages or entire chats with a single click. build your personal library of prompts and responses for quick access whenever you need them.",
     mediaSrc: "/images/feature-2.png",
+    alt: "Bookmark Important Items",
     reversed: true,
   },
   {
-    title: "Native Sidebar Integration",
+    title: (
+      <>
+        <span className="text-primary">Native</span> Sidebar Integration
+      </>
+    ),
     description:
       "Manage everything directly from Gemini's sidebar. Our extension blends perfectly with the native interface, giving you powerful tools without breaking your flow.",
     mediaSrc: "/images/feature-3.png",
+    alt: "Native Sidebar Integration",
     reversed: false,
   },
 ];

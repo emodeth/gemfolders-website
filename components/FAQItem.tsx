@@ -22,7 +22,7 @@ const FAQItem = ({ question, answer, isOpen, onClick, index }: FAQItemProps) => 
     >
       <button
         onClick={onClick}
-        className="flex w-full items-center justify-between py-6 text-left focus:outline-none group"
+        className="flex w-full items-center justify-between py-6 text-left focus:outline-none group cursor-pointer"
       >
         <span className={`text-lg font-medium transition-colors ${isOpen ? "text-primary" : "text-foreground group-hover:text-primary"}`}>
           {question}
