@@ -39,7 +39,7 @@ const PricingPlanItem = ({ plan, index }: PricingPlanProps) => {
         <h3 className="text-xl font-bold mb-2">{plan.name}</h3>
         <p className="text-sm text-secondary mb-6">{plan.description}</p>
         <div className="flex items-baseline gap-1">
-          <span className="text-3xl font-extrabold tracking-tight text-foreground">{plan.price}</span>
+          <span className="text-3xl font-bold tracking-tight text-foreground">{plan.price}</span>
           <span className="text-secondary font-medium">{plan.period}</span>
         </div>
       </div>
