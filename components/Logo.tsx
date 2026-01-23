@@ -1,9 +1,9 @@
 import Link from "next/link";
 
-const Logo = () => {
+const Logo = ({ className }: { className?: string }) => {
   return (
     <Link href="/" className="flex items-center">
-      <span className="text-4xl font-bold tracking-tight text-foreground">
+      <span className={`font-bold tracking-tight text-foreground ${className}`}>
         gemfolders
       </span>
     </Link>
