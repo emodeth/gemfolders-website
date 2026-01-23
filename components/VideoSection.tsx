@@ -7,7 +7,7 @@ const VideoSection = () => {
   const [isPlaying, setIsPlaying] = useState(false);
 
   return (
-    <section id="demo" className="relative py-16 pt-12 ">
+    <section id="demo" className="relative py-16 ">
       <div className="absolute inset-0 -z-10">
         <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-muted/50 to-transparent" />
       </div>

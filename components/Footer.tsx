@@ -6,7 +6,7 @@ import { Gem, Share2, Mail, ShieldCheck, BadgeCheck } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-background pt-20 pb-10 border-t border-border/40">
+    <footer className="bg-background pt-16 pb-10 border-t border-border/40">
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-10 mb-16">
           <div className="lg:col-span-2 space-y-6">

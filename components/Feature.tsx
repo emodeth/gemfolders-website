@@ -21,7 +21,7 @@ const Feature = ({
   reversed = false,
 }: FeatureProps) => {
   return (
-    <section className="py-24 overflow-hidden">
+    <section className="py-16 overflow-hidden">
       <div className="container px-6 mx-auto max-w-7xl">
         <div
           className={`flex flex-col gap-12 lg:gap-20 items-center ${reversed ? "lg:flex-row-reverse" : "lg:flex-row"
