@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { footerData } from "@/lib/data";
 import { Gem, Share2, Mail, ShieldCheck, BadgeCheck } from "lucide-react";
+import Logo from "./Logo";
 
 const Footer = () => {
   return (
@@ -10,14 +11,7 @@ const Footer = () => {
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-10 mb-16">
           <div className="lg:col-span-2 space-y-6">
-            <Link href="/" className="flex items-center gap-2">
-              <div className="bg-primary text-primary-foreground p-1.5 rounded-lg">
-                <Gem className="w-5 h-5" />
-              </div>
-              <span className="text-xl font-bold tracking-tight text-foreground">
-                Gem
-              </span>
-            </Link>
+            <Logo />
             <p className="text-secondary text-base max-w-xs leading-relaxed">
               {footerData.description}
             </p>
