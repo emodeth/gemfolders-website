@@ -24,13 +24,13 @@ const PricingPlanItem = ({ plan, index }: PricingPlanProps) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 + 0.2 }}
-      className={`relative flex flex-col p-8 rounded-md border-2 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 ${plan.popular
+      className={`relative flex flex-col p-8 rounded-3xl border-2 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 bg-card ${plan.popular
         ? "border-primary shadow-xl shadow-primary/10 z-10 scale-105 md:scale-110"
         : "border-border/50 hover:border-border"
         }`}
     >
       {plan.popular && (
-        <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground px-6 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase shadow-lg shadow-primary/20">
+        <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase shadow-lg shadow-primary/20 z-20 whitespace-nowrap">
           Most Popular
         </div>
       )}
@@ -48,8 +48,8 @@ const PricingPlanItem = ({ plan, index }: PricingPlanProps) => {
         <ul className="space-y-4">
           {plan.features.map((feature) => (
             <li key={feature} className="flex items-start gap-3 text-sm font-medium text-foreground/80">
-              <div className="flex items-center justify-center w-4 h-4 rounded-full bg-primary text-primary-foreground shrink-0 mt-0.5">
-                <Check className="w-2 h-2" strokeWidth={3} />
+              <div className="flex items-center justify-center w-5 h-5 rounded-full bg-primary text-primary-foreground shrink-0 mt-0.5">
+                <Check className="w-3 h-3" strokeWidth={3} />
               </div>
               <span className="leading-relaxed">{feature}</span>
             </li>
@@ -59,7 +59,7 @@ const PricingPlanItem = ({ plan, index }: PricingPlanProps) => {
 
       <Button
         variant={plan.popular ? "default" : "outline"}
-        className={`w-full h-12 text-base rounded-lg font-bold cursor-pointer transition-all ${plan.popular
+        className={`w-full h-auto min-h-[3rem] py-3 text-base rounded-xl font-bold cursor-pointer transition-all relative z-10 ${plan.popular
           ? "bg-primary hover:bg-primary/90 shadow-lg shadow-primary/25 hover:shadow-primary/40"
           : "border-2 border-border hover:border-border/50 hover:bg-background text-foreground"
           }`}

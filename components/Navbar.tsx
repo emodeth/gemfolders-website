@@ -17,7 +17,7 @@ const Navbar = () => {
     };
 
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 1024);
+      setIsMobile(window.innerWidth <= 768);
     };
 
     handleScroll();
@@ -46,15 +46,15 @@ const Navbar = () => {
 
   return (
     <header className="flex items-center justify-between w-full max-w-5xl px-10 mx-auto bg-transparent py-7">
-      <div className="hidden lg:flex flex-row items-center justify-center gap-2">
+      <div className="hidden min-[769px]:flex flex-row items-center justify-center gap-2">
         <Logo className="text-4xl" />
       </div>
 
       <div className="fixed inset-x-0 z-50 flex items-center justify-center top-6 pointer-events-none">
         <div
-          className={`pointer-events-auto mx-4 flex w-full items-center justify-center overflow-hidden rounded-full backdrop-blur-md transition-all duration-300 ease-out lg:w-auto ${showScrolled
-            ? "bg-background/80 dark:bg-background/60 shadow-md px-4 py-3 lg:px-3 lg:py-2.5"
-            : "bg-background/40 dark:bg-background/20 px-3 py-2.5 lg:p-1.5 lg:py-2"
+          className={`pointer-events-auto mx-4 flex w-full items-center justify-center overflow-hidden rounded-full backdrop-blur-md transition-all duration-300 ease-out min-[769px]:w-auto ${showScrolled
+            ? "bg-background/80 dark:bg-background/60 shadow-md px-4 py-3 min-[769px]:px-3 min-[769px]:py-2.5"
+            : "bg-background/40 dark:bg-background/20 px-3 py-2.5 min-[769px]:p-1.5 min-[769px]:py-2"
             }`}
           style={{
             boxShadow: showScrolled
@@ -62,15 +62,15 @@ const Navbar = () => {
               : "rgba(17, 24, 28, 0.08) 0px 0px 0px 0px, rgba(17, 24, 28, 0.08) 0px 0px 0px 0px, rgba(17, 24, 28, 0.04) 0px 0px 0px",
           }}
         >
-          <ul className="flex flex-row justify-between items-center w-full h-full gap-6 lg:flex-row lg:justify-start lg:gap-1">
-            <li className="flex lg:hidden items-center">
+          <ul className="flex flex-row justify-between items-center w-full h-full gap-6 min-[769px]:flex-row min-[769px]:justify-start min-[769px]:gap-1">
+            <li className="flex min-[769px]:hidden items-center">
               <Logo className="text-xl" />
             </li>
 
             {navLinks.map((link) => (
               <li
                 key={link.label}
-                className="hidden items-center justify-center px-2 py-0.5 lg:flex"
+                className="hidden items-center justify-center px-2 py-0.5 min-[769px]:flex"
               >
                 <Link
                   href={link.href}
@@ -83,7 +83,7 @@ const Navbar = () => {
             ))}
 
             <div
-              className={`hidden lg:block overflow-hidden transition-all duration-500 ease-in-out ${isScrolled ? "max-w-[150px] opacity-100 translate-x-0" : "max-w-0 opacity-0 translate-x-12"
+              className={`hidden min-[769px]:block overflow-hidden transition-all duration-500 ease-in-out ${isScrolled ? "max-w-[150px] opacity-100 translate-x-0" : "max-w-0 opacity-0 translate-x-12"
                 }`}
             >
               <Button
@@ -97,14 +97,14 @@ const Navbar = () => {
               </Button>
             </div>
 
-            <li className="flex lg:hidden items-center gap-2">
+            <li className="flex min-[769px]:hidden items-center gap-2">
               <MobileNavbar />
             </li>
           </ul>
         </div>
       </div>
 
-      <div className="hidden lg:flex flex-row items-center justify-center gap-2">
+      <div className="hidden min-[769px]:flex flex-row items-center justify-center gap-2">
         <Button
           as="a"
           href="#download"
