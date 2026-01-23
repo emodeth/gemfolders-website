@@ -1,5 +1,7 @@
 "use client";
 
+import { createPortal } from "react-dom";
+
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { Button } from "./ui/button";
@@ -63,35 +65,57 @@ const MobileNavbar = () => {
         </button>
       </div>
 
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <div className="fixed inset-x-0 top-24 z-[60] flex justify-center pointer-events-none">
+      <Portal>
+        <AnimatePresence>
+          {isMobileMenuOpen && (
             <motion.div
-              ref={menuRef}
-              initial={{ opacity: 0, y: -10, scale: 0.95 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -10, scale: 0.95 }}
+              key="mobile-menu-wrapper"
+              className="fixed inset-x-0 top-24 z-[60] flex justify-center pointer-events-none"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="pointer-events-auto w-full max-w-5xl mx-4 flex flex-col bg-popover/95 backdrop-blur-xl border border-border shadow-lg rounded-2xl p-4 lg:hidden"
             >
-              <nav className="flex flex-col gap-2 items-start justify-center flex-1 w-full">
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.label}
-                    href={link.href}
-                    onClick={(e) => handleScroll(e, link.href)}
-                    className="w-full px-4 py-3 text-lg font-medium text-foreground hover:bg-muted/50 rounded-xl transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-              </nav>
+              <motion.div
+                ref={menuRef}
+                initial={{ y: -10, scale: 0.95 }}
+                animate={{ y: 0, scale: 1 }}
+                exit={{ y: -10, scale: 0.95 }}
+                transition={{ duration: 0.2 }}
+                className="pointer-events-auto w-full max-w-5xl mx-4 flex flex-col bg-popover/95 backdrop-blur-xl border border-border shadow-lg rounded-2xl p-4 lg:hidden"
+              >
+                <nav className="flex flex-col gap-2 items-start justify-center flex-1 w-full">
+                  {navLinks.map((link) => (
+                    <Link
+                      key={link.label}
+                      href={link.href}
+                      onClick={(e) => handleScroll(e, link.href)}
+                      className="w-full px-4 py-3 text-lg font-medium text-foreground hover:bg-muted/50 rounded-xl transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </nav>
+              </motion.div>
             </motion.div>
-          </div>
-        )}
-      </AnimatePresence>
+          )}
+        </AnimatePresence>
+      </Portal>
     </>
   );
+};
+
+const Portal = ({ children }: { children: React.ReactNode }) => {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    // eslint-disable-next-line
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
+
+  return createPortal(children, document.body);
 };
 
 export default MobileNavbar;
