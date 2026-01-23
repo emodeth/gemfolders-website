@@ -5,6 +5,7 @@ import Features from "@/components/Features";
 import Pricing from "@/components/Pricing";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
+import Footer from "@/components/Footer";
 
 const Home = () => {
   return (
@@ -18,6 +19,7 @@ const Home = () => {
         <FAQSection />
         <CTASection />
       </main>
+      <Footer />
     </div>
   );
 };
