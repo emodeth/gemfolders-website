@@ -106,3 +106,36 @@ export const ctaData = {
   buttonText: "Add Gem to Chrome Free",
   secondaryText: "No credit card required. Cancel anytime.",
 };
+
+export const footerData = {
+  description:
+    "The AI-powered Chrome extension that brings order to your digital life.",
+  copyright: "© 2026 Gem Folders. All rights reserved.",
+  columns: [
+    {
+      title: "Product",
+      links: [
+        { label: "Features", href: "#features" },
+        { label: "Pricing", href: "#pricing" },
+        { label: "FAQ", href: "#faq" },
+      ],
+    },
+    {
+      title: "Company",
+      links: [
+        { label: "About", href: "#" },
+        { label: "Careers", href: "#" },
+        { label: "Blog", href: "#" },
+        { label: "Contact", href: "#" },
+      ],
+    },
+    {
+      title: "Legal",
+      links: [
+        { label: "Privacy", href: "#" },
+        { label: "Terms", href: "#" },
+        { label: "Cookies", href: "#" },
+      ],
+    },
+  ],
+};
