@@ -24,7 +24,7 @@ const HeroSection = () => {
           <span className="text-primary relative">
             organize your chats
             <svg
-              className="absolute -bottom-2 left-0 w-full"
+              className="absolute -bottom-2 left-0 w-full hidden md:block"
               viewBox="0 0 300 12"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
