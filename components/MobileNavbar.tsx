@@ -82,7 +82,11 @@ const MobileNavbar = () => {
                 animate={{ y: 0, scale: 1 }}
                 exit={{ y: -10, scale: 0.95 }}
                 transition={{ duration: 0.2 }}
-                className="pointer-events-auto w-full max-w-5xl mx-4 flex flex-col bg-popover/95 backdrop-blur-xl border border-border shadow-lg rounded-2xl p-4 lg:hidden"
+                className="pointer-events-auto w-full max-w-5xl mx-4 flex flex-col bg-background/80 dark:bg-background/60 backdrop-blur-xl shadow-lg rounded-2xl p-4 lg:hidden"
+                style={{
+                  boxShadow:
+                    "rgba(17, 24, 28, 0.08) 0px 0px 0px 1px, rgba(17, 24, 28, 0.08) 0px 1px 2px -1px, rgba(17, 24, 28, 0.04) 0px 2px 4px",
+                }}
               >
                 <nav className="flex flex-col gap-2 items-start justify-center flex-1 w-full">
                   {navLinks.map((link) => (
