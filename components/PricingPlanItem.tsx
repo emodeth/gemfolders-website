@@ -27,13 +27,13 @@ const PricingPlanItem = ({ plan, index }: PricingPlanProps) => {
       className={`relative h-full ${plan.popular ? "z-10" : "z-0"}`}
     >
       <div
-        className={`relative flex flex-col h-full p-8 rounded-3xl border-2 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 bg-card ${plan.popular
-          ? "border-primary shadow-xl shadow-primary/10 scale-105 md:scale-110"
+        className={`relative flex flex-col h-full p-8 rounded-xl border-2 transition-all duration-300 hover:shadow-2xl bg-white ${plan.popular
+          ? "border-[#3b82f6] shadow-xl shadow-blue-500/10 z-10"
           : "border-border/50 hover:border-border"
           }`}
       >
         {plan.popular && (
-          <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase shadow-lg shadow-primary/20 z-20 whitespace-nowrap">
+          <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-[#3b82f6] text-white px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase shadow-lg shadow-blue-500/20 z-20 whitespace-nowrap">
             Most Popular
           </div>
         )}
@@ -42,7 +42,7 @@ const PricingPlanItem = ({ plan, index }: PricingPlanProps) => {
           <h3 className="text-xl font-bold mb-2">{plan.name}</h3>
           <p className="text-sm text-secondary mb-6">{plan.description}</p>
           <div className="flex items-baseline gap-1">
-            <span className="text-3xl font-bold tracking-tight text-foreground">{plan.price}</span>
+            <span className="text-5xl font-bold tracking-tight text-foreground">{plan.price}</span>
             <span className="text-secondary font-medium">{plan.period}</span>
           </div>
         </div>
@@ -51,7 +51,7 @@ const PricingPlanItem = ({ plan, index }: PricingPlanProps) => {
           <ul className="space-y-4">
             {plan.features.map((feature) => (
               <li key={feature} className="flex items-start gap-3 text-sm font-medium text-foreground/80">
-                <div className="flex items-center justify-center w-5 h-5 rounded-full bg-primary text-primary-foreground shrink-0 mt-0.5">
+                <div className="flex items-center justify-center w-5 h-5 rounded-full bg-[#3b82f6] text-white shrink-0 mt-0.5">
                   <Check className="w-3 h-3" strokeWidth={3} />
                 </div>
                 <span className="leading-relaxed">{feature}</span>
@@ -63,7 +63,7 @@ const PricingPlanItem = ({ plan, index }: PricingPlanProps) => {
         <Button
           variant={plan.popular ? "default" : "outline"}
           className={`w-full h-auto min-h-[3rem] py-3 text-base rounded-xl font-bold cursor-pointer transition-all relative z-10 ${plan.popular
-            ? "bg-primary hover:bg-primary/90 shadow-lg shadow-primary/25 hover:shadow-primary/40"
+            ? "bg-[#3b82f6] hover:bg-[#3b82f6]/90 shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 text-white"
             : "border-2 border-border hover:border-border/50 hover:bg-background text-foreground"
             }`}
         >
