@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { ArrowRight, Check } from "lucide-react";
 
 interface FeatureProps {
   title: React.ReactNode;
@@ -10,6 +11,10 @@ interface FeatureProps {
   mediaType?: "image" | "video";
   alt?: string;
   reversed?: boolean;
+  checklist?: string[];
+  tags?: string[];
+  ctaLink?: string;
+  ctaText?: string;
 }
 
 const Feature = ({
@@ -19,15 +24,19 @@ const Feature = ({
   mediaType = "image",
   alt = "",
   reversed = false,
+  checklist,
+  tags,
+  ctaLink,
+  ctaText,
 }: FeatureProps) => {
   return (
     <section className="py-16 overflow-hidden">
       <div className="container px-6 mx-auto max-w-7xl">
         <div
-          className={`flex flex-col gap-12 lg:gap-20 items-center ${reversed ? "lg:flex-row-reverse" : "lg:flex-row"
+          className={`flex flex-col-reverse gap-12 lg:gap-20 items-center ${reversed ? "lg:flex-row-reverse" : "lg:flex-row"
             }`}
         >
-          <div className="flex-1 text-center lg:text-left space-y-6">
+          <div className="flex-1 w-full text-left space-y-6">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -43,10 +52,66 @@ const Feature = ({
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-lg  text-secondary leading-relaxed max-w-2xl mx-auto lg:mx-0"
+              className="text-lg text-secondary font-medium leading-relaxed max-w-2xl"
             >
               {description}
             </motion.p>
+
+            {checklist && (
+              <motion.ul
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="pt-4 space-y-4 max-w-xl"
+              >
+                {checklist.map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-lg text-secondary font-medium">
+                    <div className="w-6 h-6 rounded-full bg-[#22c55e] flex items-center justify-center shrink-0 mt-1">
+                      <Check className="w-4 h-4 text-white" strokeWidth={3} />
+                    </div>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </motion.ul>
+            )}
+
+            {tags && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="flex flex-wrap gap-3 justify-start"
+              >
+                {tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="px-4 py-2 bg-secondary/10 text-secondary rounded-sm text-sm font-medium"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </motion.div>
+            )}
+
+            {ctaLink && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                className="flex justify-start"
+              >
+                <a
+                  href={ctaLink}
+                  className="inline-flex items-center gap-1.5 text-primary font-semibold text-lg transition-all group hover:text-primary/70"
+                >
+                  {ctaText || "Learn more"}
+                  <ArrowRight className="w-4 h-4 transition-transform mt-0.5" />
+                </a>
+              </motion.div>
+            )}
           </div>
 
           <motion.div

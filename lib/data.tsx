@@ -10,14 +10,19 @@ export const featuresData = [
   {
     title: (
       <>
-        <span className="text-primary">Organize</span> Chats
+        <span className="text-primary">Organize</span> your Chats
       </>
     ),
     description:
       "Create folders and sub-folders to keep your chats structured. Drag and drop conversations to organize them exactly how you want. Sync your structure across all your devices seamlessly.",
     mediaSrc: "/images/feature-1.png",
     alt: "Organize Chats",
-    reversed: false,
+    reversed: true,
+    checklist: [
+      "Drag & Drop simplicity",
+      "Nested sub-folders",
+      "Cross-device sync",
+    ],
   },
   {
     title: (
@@ -26,10 +31,11 @@ export const featuresData = [
       </>
     ),
     description:
-      "Save specific messages or entire chats with a single click. build your personal library of prompts and responses for quick access whenever you need them.",
+      "Save specific messages or entire chats with a single click. Build your personal library of prompts and responses for quick access whenever you need them.",
     mediaSrc: "/images/feature-2.png",
     alt: "Bookmark Important Items",
-    reversed: true,
+    reversed: false,
+    tags: ["Quick Access", "Searchable", "Tags"],
   },
   {
     title: (
@@ -41,7 +47,9 @@ export const featuresData = [
       "Manage everything directly from Gemini's sidebar. Our extension blends perfectly with the native interface, giving you powerful tools without breaking your flow.",
     mediaSrc: "/images/feature-3.png",
     alt: "Native Sidebar Integration",
-    reversed: false,
+    reversed: true,
+    ctaLink: "#how-it-works",
+    ctaText: "View how it works",
   },
 ];
 
