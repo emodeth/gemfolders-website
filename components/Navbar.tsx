@@ -70,7 +70,7 @@ const Navbar = () => {
             {navLinks.map((link) => (
               <li
                 key={link.label}
-                className="hidden items-center justify-center px-2 py-0.5 min-[769px]:flex"
+                className="hidden items-center justify-center px-2 py-0.5 min-[769px]:flex font-medium"
               >
                 <Link
                   href={link.href}

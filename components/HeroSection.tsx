@@ -2,15 +2,11 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { PlayCircle } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="relative overflow-hidden pt-32 pb-16">
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-primary/10 rounded-full blur-[120px] opacity-50" />
-      </div>
-
+    <section className="relative overflow-hidden pt-20 md:pt-16 pb-16">
       <div className="mx-auto max-w-4xl px-6 lg:px-8 text-center">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
@@ -18,13 +14,12 @@ const HeroSection = () => {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground leading-[1.1]"
         >
-          A browser extension
+          A browser extension to
           <br />
-          to{" "}
-          <span className="text-primary relative">
+          <span className="text-primary relative inline-block">
             organize your chats
             <svg
-              className="absolute -bottom-2 left-0 w-full hidden md:block"
+              className="absolute -bottom-3 left-0 w-full hidden md:block"
               viewBox="0 0 300 12"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -34,7 +29,7 @@ const HeroSection = () => {
                 stroke="currentColor"
                 strokeWidth="3"
                 strokeLinecap="round"
-                className="opacity-30"
+                className="opacity-60"
               />
             </svg>
           </span>
@@ -46,7 +41,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="pt-5 text-secondary text-lg font-medium max-w-2xl text-center mx-auto "
+          className="pt-5 text-secondary text-lg md:text-xl font-medium max-w-3xl text-center mx-auto "
         >
           Organize your Gemini conversations with folders, search, and bookmarks —
           <br />
@@ -57,12 +52,15 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4"
+          className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <Button as="a" href="#download" className="text-2xl px-6 py-2.5 rounded-sm">
+          <Button as="a" href="#download" className="w-full sm:w-auto min-w-[200px] h-12 sm:h-14 text-lg sm:text-xl px-8 rounded-sm">
             Add to Browser
           </Button>
-
+          <Button variant="outline" className="w-full sm:w-auto min-w-[200px] h-12 sm:h-14 text-lg sm:text-xl px-8 rounded-sm gap-3 cursor-pointer">
+            <PlayCircle className="w-5 h-5 sm:w-6 sm:h-6" />
+            Watch Demo
+          </Button>
         </motion.div>
 
 
