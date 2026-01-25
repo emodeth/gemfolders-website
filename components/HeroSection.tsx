@@ -6,7 +6,7 @@ import { PlayCircle } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="relative overflow-hidden pt-16 pb-16">
+    <section className="relative overflow-hidden pt-20 md:pt-16 pb-16">
       <div className="mx-auto max-w-4xl px-6 lg:px-8 text-center">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
