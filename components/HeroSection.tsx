@@ -71,9 +71,8 @@ const HeroSection = () => {
             No credit card needed
           </p>
         </motion.div>
-
-
       </div>
+
     </section>
   );
 };

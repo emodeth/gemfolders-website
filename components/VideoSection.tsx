@@ -1,10 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState } from "react";
-
 const VideoSection = () => {
-  const [isPlaying, setIsPlaying] = useState(false);
 
   return (
     <section id="demo" className="relative py-16 ">
@@ -39,36 +36,15 @@ const VideoSection = () => {
               </div>
             </div>
 
-            <div className="relative aspect-video bg-gradient-to-br from-muted to-muted/50">
-              <div className="absolute inset-0 flex items-center justify-center">
-                {!isPlaying ? (
-                  <button
-                    onClick={() => setIsPlaying(true)}
-                    className="group flex flex-col items-center gap-4 transition-transform hover:scale-105"
-                  >
-                    <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-primary text-primary-foreground flex items-center justify-center shadow-lg shadow-primary/30 group-hover:shadow-xl group-hover:shadow-primary/40 transition-all cursor-pointer">
-                      <svg className="w-8 h-8 md:w-10 md:h-10 ml-1" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M8 5v14l11-7z" />
-                      </svg>
-                    </div>
-                    <span className="text-secondary font-medium">Click to play demo</span>
-                  </button>
-                ) : (
-                  <div className="absolute inset-0 bg-black flex items-center justify-center">
-                    <video
-                      className="w-full h-full object-cover"
-                      autoPlay
-                      controls
-                      src="/video.mp4"
-                    />
-                  </div>
-                )}
-              </div>
-
-
-              {!isPlaying && (
-                <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent pointer-events-none" />
-              )}
+            <div className="relative bg-muted">
+              <video
+                src="/videos/gemfolders_video_hero.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-auto"
+              />
             </div>
           </div>
 
