@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <footer className="bg-background pt-16 pb-10 border-t border-border/40">
       <div className="container mx-auto px-6 max-w-7xl">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-10 mb-16">
+        <div className="flex flex-col md:flex-row md:justify-between gap-10 mb-16">
           <div className="lg:col-span-2 space-y-6">
             <Logo />
             <p className="text-secondary text-base max-w-xs leading-relaxed">
@@ -18,7 +18,7 @@ const Footer = () => {
 
           </div>
 
-          <div className="lg:col-span-4 grid grid-cols-2 sm:grid-cols-3 gap-8">
+          <div className="flex gap-24 md:gap-32 justify-between">
             {footerData.columns.map((column) => (
               <div key={column.title} className="space-y-4">
                 <h3 className="font-bold text-foreground">{column.title}</h3>
@@ -27,7 +27,7 @@ const Footer = () => {
                     <li key={link.label}>
                       <Link
                         href={link.href}
-                        className="text-secondary hover:text-secondary/80 text-sm transition-colors duration-75"
+                        className="text-secondary hover:text-secondary/80 text-sm transition-colors duration-75 whitespace-nowrap"
                       >
                         {link.label}
                       </Link>
