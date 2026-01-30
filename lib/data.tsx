@@ -146,20 +146,10 @@ export const footerData = {
       ],
     },
     {
-      title: "Company",
-      links: [
-        { label: "About", href: "#" },
-        { label: "Careers", href: "#" },
-        { label: "Blog", href: "#" },
-        { label: "Contact", href: "#" },
-      ],
-    },
-    {
       title: "Legal",
       links: [
-        { label: "Privacy", href: "#" },
-        { label: "Terms", href: "#" },
-        { label: "Cookies", href: "#" },
+        { label: "Privacy Policy", href: "/legal/privacy" },
+        { label: "Terms of Service", href: "/legal/terms" },
       ],
     },
   ],
