@@ -27,13 +27,19 @@ export default function PrivacyPolicy() {
             <li className="flex items-start">
               <span className="mr-2 mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-black"></span>
               <span>
-                <span className="font-bold text-black">Account Information:</span> Email address and basic profile info when you sign up.
+                <span className="font-bold text-black">Name:</span> We collect your name to personalize your experience and communicate with you effectively.
               </span>
             </li>
             <li className="flex items-start">
               <span className="mr-2 mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-black"></span>
               <span>
-                <span className="font-bold text-black">Local Data:</span> Your folder structure and organization preferences are stored locally on your device unless synced.
+                <span className="font-bold text-black">Email:</span> We collect your email address to send you important information regarding your account and communication.
+              </span>
+            </li>
+            <li className="flex items-start">
+              <span className="mr-2 mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-black"></span>
+              <span>
+                <span className="font-bold text-black">Payment Information:</span> We collect payment details to process your orders securely. However, we do not store your payment information on our servers. Payments are processed by trusted third-party payment processors.
               </span>
             </li>
           </ul>
