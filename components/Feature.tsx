@@ -13,6 +13,7 @@ interface FeatureProps {
   reversed?: boolean;
   checklist?: string[];
   tags?: string[];
+  mediaFit?: "contain" | "cover";
   ctaLink?: string;
   ctaText?: string;
 }
@@ -22,6 +23,7 @@ const Feature = ({
   description,
   mediaSrc,
   mediaType = "image",
+  mediaFit = "cover",
   alt = "",
   reversed = false,
   checklist,
@@ -132,14 +134,15 @@ const Feature = ({
                 </div>
               </div>
 
-              <div className="relative aspect-4/3 md:aspect-16/10 bg-muted/20">
+              <div className={`relative bg-muted/20 ${mediaFit === "contain" ? "" : "aspect-video"}`}>
                 {mediaType === "video" ? (
                   <video
                     src={mediaSrc}
                     autoPlay
                     loop
                     muted
-                    className="w-full h-full object-cover"
+                    playsInline
+                    className={`w-full block ${mediaFit === "contain" ? "h-auto" : "h-full object-cover"}`}
                   />
                 ) : (
                   <div className="relative w-full h-full">
