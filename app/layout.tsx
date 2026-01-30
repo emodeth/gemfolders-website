@@ -9,7 +9,7 @@ const openSans = Open_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Gem Folders - A browser extension to manage your Gemini chats",
+  title: "Gem Folders - A Browser Extension to Manage Gemini Chats",
   description: "Gem Folders is a browser extension that provides a new way to manage your folders for Gemini",
 };
 
