@@ -106,6 +106,7 @@ const Feature = ({
                 className="flex justify-start"
               >
                 <a
+                  target="_blank"
                   href={ctaLink}
                   className="inline-flex items-center gap-1.5 text-primary font-semibold text-lg transition-all group hover:text-primary/70"
                 >
