@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { EXTENSION_ID } from "@/lib/constants";
 
 interface PricingPlanProps {
   plan: {
@@ -18,6 +19,41 @@ interface PricingPlanProps {
 }
 
 const PricingPlanItem = ({ plan, index }: PricingPlanProps) => {
+
+  const handleUpgrade = () => {
+    interface ChromeRuntime {
+      sendMessage: (
+        extensionId: string,
+        message: { action: string; plan?: string },
+        callback?: (response: unknown) => void
+      ) => void;
+      lastError?: { message: string };
+    }
+
+    interface Chrome {
+      runtime?: ChromeRuntime;
+    }
+
+    const chrome = (globalThis as unknown as { chrome?: Chrome }).chrome;
+
+    if (chrome?.runtime?.sendMessage) {
+      chrome.runtime.sendMessage(
+        EXTENSION_ID,
+        { action: "TRIGGER_PURCHASE", plan: plan.name },
+        (response: unknown) => {
+          if (chrome.runtime?.lastError) {
+            console.log("Extension not found or communication error:", chrome.runtime.lastError);
+            globalThis.open(`https://chrome.google.com/webstore/detail/${EXTENSION_ID}`, "_blank");
+          } else {
+            console.log("Extension response:", response);
+          }
+        }
+      );
+    } else {
+      globalThis.open(`https://chrome.google.com/webstore/detail/${EXTENSION_ID}`, "_blank");
+    }
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -45,6 +81,7 @@ const PricingPlanItem = ({ plan, index }: PricingPlanProps) => {
             <span className="text-5xl font-bold tracking-tight text-foreground">{plan.price}</span>
             <span className="text-secondary font-medium">{plan.period}</span>
           </div>
+          <p className="text-xs text-muted-foreground mt-1">Tax excluded</p>
         </div>
 
         <div className="flex-1 mb-10">
@@ -61,6 +98,7 @@ const PricingPlanItem = ({ plan, index }: PricingPlanProps) => {
         </div>
 
         <Button
+          onClick={handleUpgrade}
           variant={plan.popular ? "default" : "outline"}
           className={`w-full h-auto min-h-[3rem] py-3 text-base rounded-xl font-bold cursor-pointer transition-all relative z-10 ${plan.popular
             ? "bg-[#3b82f6] hover:bg-[#3b82f6]/90 shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 text-white"
