@@ -17,6 +17,7 @@ export const featuresData = [
       "Create folders and sub-folders to keep your chats structured. Drag and drop conversations to organize them exactly how you want. Sync your structure across all your devices seamlessly.",
     mediaSrc: "/videos/gemfolders_video_organize.mp4",
     mediaType: "video" as const,
+    mediaPosition: "top" as const,
     alt: "Organize Chats",
     reversed: true,
     checklist: [

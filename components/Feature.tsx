@@ -14,6 +14,7 @@ interface FeatureProps {
   checklist?: string[];
   tags?: string[];
   mediaFit?: "contain" | "cover";
+  mediaPosition?: "top" | "center" | "bottom" | "left" | "right";
   ctaLink?: string;
   ctaText?: string;
 }
@@ -24,6 +25,7 @@ const Feature = ({
   mediaSrc,
   mediaType = "image",
   mediaFit = "cover",
+  mediaPosition = "center",
   alt = "",
   reversed = false,
   checklist,
@@ -31,6 +33,14 @@ const Feature = ({
   ctaLink,
   ctaText,
 }: FeatureProps) => {
+  const positionClass = {
+    top: "object-top",
+    center: "object-center",
+    bottom: "object-bottom",
+    left: "object-left",
+    right: "object-right",
+  }[mediaPosition];
+
   return (
     <section className="py-16 overflow-hidden">
       <div className="container px-6 mx-auto max-w-7xl">
@@ -143,7 +153,7 @@ const Feature = ({
                     loop
                     muted
                     playsInline
-                    className={`w-full block ${mediaFit === "contain" ? "h-auto" : "h-full object-cover"}`}
+                    className={`w-full block ${mediaFit === "contain" ? "h-auto" : "h-full object-cover"} ${positionClass}`}
                   />
                 ) : (
                   <div className="relative w-full h-full">
@@ -151,7 +161,7 @@ const Feature = ({
                       src={mediaSrc}
                       alt={alt}
                       fill
-                      className="object-cover"
+                      className={`object-cover ${positionClass}`}
                       unoptimized={mediaSrc.endsWith('.gif')}
                     />
                   </div>
