@@ -1,1 +1,1 @@
-export const EXTENSION_ID = "ndgfbinbkmboojipkmmidmboodpdafdp";
+export const EXTENSION_ID = "dnlonnjaceadodcffgillnlkgfoaclfi";
