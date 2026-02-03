@@ -53,7 +53,7 @@ export const featuresData = [
     mediaType: "video" as const,
     alt: "Native Sidebar Integration",
     reversed: true,
-    ctaLink: "https://www.youtube.com/watch?v=4VU6sWnGeEg",
+    ctaLink: "https://www.youtube.com/watch?v=zsiw4Z9-ajI",
     ctaText: "View how it works",
   },
 ];
