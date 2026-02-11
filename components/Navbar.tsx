@@ -88,10 +88,11 @@ const Navbar = () => {
             >
               <Button
                 as="a"
-                href="#download"
+                href="https://chromewebstore.google.com/detail/gemini-folders-bookmarks/dnlonnjaceadodcffgillnlkgfoaclfi"
+                target="_blank"
+                rel="noopener noreferrer"
                 size="sm"
                 className="whitespace-nowrap text-[16px]"
-                onClick={(e: React.MouseEvent<HTMLAnchorElement>) => handleScroll(e, "#download")}
               >
                 Download
               </Button>
@@ -107,7 +108,9 @@ const Navbar = () => {
       <div className="hidden min-[769px]:flex flex-row items-center justify-center gap-2">
         <Button
           as="a"
-          href="#download"
+          href="https://chromewebstore.google.com/detail/gemini-folders-bookmarks/dnlonnjaceadodcffgillnlkgfoaclfi"
+          target="_blank"
+          rel="noopener noreferrer"
           size="sm"
           className="whitespace-nowrap px-6 py-2.5 rounded-sm cursor-pointer">
           Add to Browser

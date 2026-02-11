@@ -43,14 +43,14 @@ const PricingPlanItem = ({ plan, index }: PricingPlanProps) => {
         (response: unknown) => {
           if (chrome.runtime?.lastError) {
             console.log("Extension not found or communication error:", chrome.runtime.lastError);
-            globalThis.open(`https://chrome.google.com/webstore/detail/${EXTENSION_ID}`, "_blank");
+            globalThis.open("https://chromewebstore.google.com/detail/gemini-folders-bookmarks/dnlonnjaceadodcffgillnlkgfoaclfi", "_blank");
           } else {
             console.log("Extension response:", response);
           }
         }
       );
     } else {
-      globalThis.open(`https://chrome.google.com/webstore/detail/${EXTENSION_ID}`, "_blank");
+      globalThis.open("https://chromewebstore.google.com/detail/gemini-folders-bookmarks/dnlonnjaceadodcffgillnlkgfoaclfi", "_blank");
     }
   };
 

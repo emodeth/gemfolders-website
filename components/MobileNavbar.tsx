@@ -49,10 +49,11 @@ const MobileNavbar = () => {
       <div className="flex items-center gap-2">
         <Button
           as="a"
-          href="#download"
+          href="https://chromewebstore.google.com/detail/gemini-folders-bookmarks/dnlonnjaceadodcffgillnlkgfoaclfi"
+          target="_blank"
+          rel="noopener noreferrer"
           size="sm"
           className="whitespace-nowrap text-xs h-8 px-3"
-          onClick={(e: React.MouseEvent<HTMLAnchorElement>) => handleScroll(e, "#download")}
         >
           Download
         </Button>
