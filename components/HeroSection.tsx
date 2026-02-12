@@ -63,7 +63,7 @@ const HeroSection = () => {
           className="mt-8 flex flex-col items-center gap-4"
         >
           <div className="">
-            <Button as="a" href="#download" className="w-full sm:w-auto min-w-[235px] h-12 sm:h-14 text-lg sm:text-xl px-8 rounded-md shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all ">
+            <Button as="a" href="https://chromewebstore.google.com/detail/gemini-folders-bookmarks/dnlonnjaceadodcffgillnlkgfoaclfi" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto min-w-[235px] h-12 sm:h-14 text-lg sm:text-xl px-8 rounded-md shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all ">
               Try Gemfolders for Free
             </Button>
           </div>

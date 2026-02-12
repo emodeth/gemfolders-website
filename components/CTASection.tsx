@@ -33,6 +33,10 @@ const CTASection = () => {
 
             <div className="flex flex-col items-center gap-4 w-full">
               <Button
+                as="a"
+                href="https://chromewebstore.google.com/detail/gemini-folders-bookmarks/dnlonnjaceadodcffgillnlkgfoaclfi"
+                target="_blank"
+                rel="noopener noreferrer"
                 size="lg"
                 className="bg-white text-primary! hover:bg-white/90 font-bold text-base h-14 px-8 rounded-sm shadow-lg hover:shadow-xl transition-all cursor-pointer"
               >
