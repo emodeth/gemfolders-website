@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<p align="center">
+  <img src="assets/icon.png" alt="Gemfolders Logo" width="128" height="128" />
+</p>
 
-## Getting Started
+<h1 align="center">Gemfolders</h1>
 
-First, run the development server:
+<p align="center">
+  <strong>Organize your Gemini conversations and ideas in one place.</strong>
+</p>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+<p align="center">
+  <a href="https://chromewebstore.google.com/detail/gemini-folders-bookmarks/dnlonnjaceadodcffgillnlkgfoaclfi">
+    <img src="https://img.shields.io/badge/Chrome_Web_Store-Install-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Chrome Web Store" />
+  </a>
+  &nbsp;
+  <a href="https://www.gemfolders.com">
+    <img src="https://img.shields.io/badge/Website-gemfolders.com-FF6F61?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Website" />
+  </a>
+</p>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<p align="center">
+  <a href="https://chromewebstore.google.com/detail/gemini-folders-bookmarks/dnlonnjaceadodcffgillnlkgfoaclfi">
+    <img src="https://img.shields.io/chrome-web-store/rating/dnlonnjaceadodcffgillnlkgfoaclfi?style=flat-square&label=Rating" alt="Chrome Web Store Rating" />
+  </a>
+  <a href="https://chromewebstore.google.com/detail/gemini-folders-bookmarks/dnlonnjaceadodcffgillnlkgfoaclfi">
+    <img src="https://img.shields.io/chrome-web-store/users/dnlonnjaceadodcffgillnlkgfoaclfi?style=flat-square&label=Users" alt="Chrome Web Store Users" />
+  </a>
+  <img src="https://img.shields.io/badge/license-MIT-green?style=flat-square" alt="License" />
+</p>
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Stop losing important threads. Gemfolders is a browser extension that brings structure to your Google Gemini workflow with native folders, instant search, and bookmarks — all directly inside Gemini's sidebar.
 
-## Learn More
+## ✨ Features
 
-To learn more about Next.js, take a look at the following resources:
+- **📁 Custom Folders** — Create, rename, and color-code folders to categorize chats by project, topic, or client.
+- **🔖 Bookmarks** — Pin important conversations for instant one-click access.
+- **🔍 Search** — Instantly find past chats by title or keyword. No more endless scrolling.
+- **🖱️ Drag & Drop** — Move chats between folders effortlessly.
+- **⚡ Native Sidebar Integration** — Blends seamlessly into Gemini's interface without disrupting your flow.
+- **🌗 Theme Aware** — Automatically adapts to Gemini's light and dark modes.
+- **🔒 Privacy-Focused** — Your data stays local on your device. We never collect or share your chat history.
+- **🔄 Cloud Sync** — Sync your folder structure across devices with end-to-end encrypted storage.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🚀 Getting Started
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Install Gemfolders from the [Chrome Web Store](https://chromewebstore.google.com/detail/gemini-folders-bookmarks/dnlonnjaceadodcffgillnlkgfoaclfi) — it's free to get started.
 
-## Deploy on Vercel
+## 👤 Author
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Emirhan Keskin**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🔗 Links
+
+- 🌐 **Website:** [gemfolders.com](https://www.gemfolders.com)
+- 🏪 **Github Repo:** [gemfolders](https://github.com/emodeth/gemfolders)
+- 🏪 **Chrome Web Store:** [Install Gemfolders](https://chromewebstore.google.com/detail/gemini-folders-bookmarks/dnlonnjaceadodcffgillnlkgfoaclfi)
+- 📺 **Demo Video:** [Watch on YouTube](https://youtu.be/zsiw4Z9-ajI?si=hXfGFZyc7mnl7jCU)
+- 📧 **Contact:** emirhankeskindev@gmail.com
+- 🔐 **Privacy Policy:** [gemfolders.com/legal/privacy](https://www.gemfolders.com/legal/privacy)
+
+---
+
+<p align="center">
+  <sub><em>Not affiliated with Google or Gemini.</em></sub>
+</p>
