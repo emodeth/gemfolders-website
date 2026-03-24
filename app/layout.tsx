@@ -9,7 +9,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Gemfolders - A Browser Extension to Manage Gemini Chats",
-  description: "Gemfolders is a browser extension that provides a new way to manage your folders for Gemini",
+  description:
+    "Gemfolders is a browser extension that provides a new way to manage your folders for Gemini",
 };
 
 export default function RootLayout({
@@ -19,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} font-sans antialiased bg-background`}>
         {children}
       </body>
     </html>

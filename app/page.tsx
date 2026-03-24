@@ -4,8 +4,7 @@ import VideoSection from "@/components/VideoSection";
 import Features from "@/components/Features";
 import Pricing from "@/components/Pricing";
 import FAQSection from "@/components/FAQSection";
-import CTASection from "@/components/CTASection";
-import Footer from "@/components/Footer";
+import ClosingCtaFooter from "@/components/ClosingCtaFooter";
 
 const Home = () => {
   return (
@@ -17,9 +16,8 @@ const Home = () => {
         <Features />
         <Pricing />
         <FAQSection />
-        <CTASection />
       </main>
-      <Footer />
+      <ClosingCtaFooter />
     </div>
   );
 };

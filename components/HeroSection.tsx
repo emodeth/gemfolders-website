@@ -8,7 +8,7 @@ const CHROME_STORE_URL =
 
 const HeroSection = () => {
   return (
-    <section className="relative overflow-hidden pb-0 pt-20 md:pt-16">
+    <section className="relative overflow-hidden pt-20 md:pt-16 pb-0!">
       <header className="mx-auto my-20 flex max-w-xl flex-col items-center text-center text-balance md:my-24">
         <motion.h1
           initial={{ opacity: 0, y: 12 }}

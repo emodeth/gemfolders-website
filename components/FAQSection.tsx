@@ -19,7 +19,7 @@ const FAQSection = () => {
   return (
     <section
       id="faq"
-      className="relative overflow-hidden  py-20 md:py-24 dark:bg-zinc-950"
+      className="relative overflow-hidden py-20 md:py-24 pb-0! dark:bg-zinc-950"
     >
       <div className="container mx-auto max-w-2xl px-6">
         <div className="mb-10 flex flex-col items-center text-center md:mb-12">
