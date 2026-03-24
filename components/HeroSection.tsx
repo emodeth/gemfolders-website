@@ -60,11 +60,6 @@ const HeroSection = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center rounded-full bg-primary px-4 py-2 text-[15px] font-medium text-white transition-opacity hover:opacity-90"
-            whileHover={
-              prefersReducedMotion ? undefined : { scale: 1.035, y: -1 }
-            }
-            whileTap={prefersReducedMotion ? undefined : { scale: 0.98 }}
-            transition={{ type: "spring", stiffness: 420, damping: 28 }}
           >
             <Plus className="mr-1 size-3 shrink-0 stroke-3" aria-hidden />
             Add to Chrome
