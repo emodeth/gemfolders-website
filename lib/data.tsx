@@ -127,33 +127,7 @@ export const faqs = [
   },
 ];
 
-export const ctaData = {
-  title: "Ready to clear the clutter?",
-  description:
-    "Install Gem today and join thousands of people who've found browser nirvana.",
-  buttonText: "Add Gem to Chrome Free",
-  secondaryText: "No credit card required. Cancel anytime.",
-};
-
-export const footerData = {
-  description:
-    "The Browser extension that brings order to your Gemini conversations.",
-  copyright: "© 2026 Gem Folders. All rights reserved.",
-  columns: [
-    {
-      title: "Product",
-      links: [
-        { label: "Features", href: "#features" },
-        { label: "Pricing", href: "#pricing" },
-        { label: "FAQ", href: "#faq" },
-      ],
-    },
-    {
-      title: "Legal",
-      links: [
-        { label: "Privacy Policy", href: "/legal/privacy" },
-        { label: "Terms of Service", href: "/legal/terms" },
-      ],
-    },
-  ],
-};
+export const closingSection = {
+  chromeStoreUrl:
+    "https://chromewebstore.google.com/detail/gemini-folders-bookmarks/dnlonnjaceadodcffgillnlkgfoaclfi",
+} as const;
