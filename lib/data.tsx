@@ -94,6 +94,33 @@ export const pricingPlans = [
   },
 ];
 
+export const socialProof = {
+  title: "Loved by Gemini users",
+  subtitle:
+    "Folders and bookmarks that actually stick with your workflow—not another tab to babysit.",
+  statDetail: "Used from students to teams who live in Gemini",
+  testimonials: [
+    {
+      quote:
+        "I came across this randomly. smooth usage and lot better than the others I tried.",
+      name: "Cem C.",
+      role: "Software Engineer",
+    },
+    {
+      quote:
+        "Bookmarks for specific replies saved me hours. It’s the sidebar upgrade Gemini should’ve shipped.",
+      name: "Olcay Y.",
+      role: "Software engineer",
+    },
+    {
+      quote:
+        "Clean, fast, and stays out of the way. My workspace finally matches how I think about projects.",
+      name: "Chris L.",
+      role: "Founder",
+    },
+  ],
+} as const;
+
 export const faqs = [
   {
     question: "Do I need a credit card to sign up?",
