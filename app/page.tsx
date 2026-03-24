@@ -3,6 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import VideoSection from "@/components/VideoSection";
 import Features from "@/components/Features";
 import Pricing from "@/components/Pricing";
+import SocialProofSection from "@/components/SocialProofSection";
 import FAQSection from "@/components/FAQSection";
 import ClosingCtaFooter from "@/components/ClosingCtaFooter";
 
@@ -15,6 +16,7 @@ const Home = () => {
         <VideoSection />
         <Features />
         <Pricing />
+        <SocialProofSection />
         <FAQSection />
       </main>
       <ClosingCtaFooter />
