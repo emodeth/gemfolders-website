@@ -1,78 +1,79 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
+import { motion, useReducedMotion } from "framer-motion";
+import { Plus } from "lucide-react";
+import {
+  heroBodyVariants,
+  heroContainerVariants,
+  heroCtaVariants,
+  heroTitleContainerVariants,
+  heroTitleLineVariants,
+} from "@/lib/hero-motion";
+
+const CHROME_STORE_URL =
+  "https://chromewebstore.google.com/detail/gemini-folders-bookmarks/dnlonnjaceadodcffgillnlkgfoaclfi";
 
 const HeroSection = () => {
-  return (
-    <section className="relative overflow-hidden pt-20 md:pt-16 pb-16">
-      <div className="mx-auto max-w-4xl px-6 lg:px-8 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.05 }}
-          className="mb-6 flex justify-center"
-        >
-          <div className="inline-flex items-center rounded-full border border-gray-200 bg-gray-100 px-3 py-1 font-medium text-secondary transition-colors cursor-default whitespace-nowrap dark:bg-gray-800 dark:text-gray-300 dark:border-gray-700 text-xs sm:text-sm">
-            The missing file manager for <span className="ml-1 font-semibold text-foreground">Gemini</span>
-          </div>
-        </motion.div>
+  const prefersReducedMotion = useReducedMotion();
 
+  return (
+    <section className="relative overflow-hidden pt-20 md:pt-16 pb-0!">
+      <motion.header
+        className="mx-auto my-20 flex max-w-xl flex-col items-center text-center text-balance md:my-24"
+        initial="hidden"
+        animate="visible"
+        variants={heroContainerVariants(prefersReducedMotion)}
+      >
         <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground leading-[1.1] text-balance"
+          variants={heroTitleContainerVariants(prefersReducedMotion)}
+          className="my-2 mb-4 text-4xl font-medium tracking-tight text-foreground sm:text-5xl md:text-[62px] md:leading-[1.09]"
         >
-          Organize your Gemini
-          <br className="hidden sm:block" />
-          <span className="text-primary relative inline-block">
-            conversations and ideas
-            <svg
-              className="absolute -bottom-2 sm:-bottom-3 left-0 w-full hidden md:block"
-              viewBox="0 0 300 12"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M2 8.5C50 2.5 150 2.5 298 8.5"
-                stroke="currentColor"
-                strokeWidth="3"
-                strokeLinecap="round"
-                className="opacity-60"
-              />
-            </svg>
-          </span>
-          <br className="hidden sm:block" />
-          in one place
+          <motion.span
+            variants={heroTitleLineVariants(prefersReducedMotion)}
+            className="inline-block"
+          >
+            Simple folders
+          </motion.span>
+          <br />
+          <motion.span
+            variants={heroTitleLineVariants(prefersReducedMotion)}
+            className="inline-block"
+          >
+            for Gemini chats
+          </motion.span>
         </motion.h1>
 
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="pt-6 text-secondary text-lg md:text-xl font-medium max-w-2xl text-center mx-auto leading-relaxed"
+          variants={heroBodyVariants(prefersReducedMotion)}
+          className="max-2w-md px-2 text-[15px] text-neutral-600 md:text-[24px] tracking-tighter "
         >
-          Stop losing important threads. Gem Folders brings structure to your AI workflow with native folders, instant search, and bookmarks.
+          With Gemfolders your threads never get lost. Built for clarity, right
+          inside your browser.
         </motion.p>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="mt-8 flex flex-col items-center gap-4"
+          variants={heroCtaVariants(prefersReducedMotion)}
+          className="mt-4 flex flex-col items-center"
         >
-          <div className="">
-            <Button as="a" href="https://chromewebstore.google.com/detail/gemini-folders-bookmarks/dnlonnjaceadodcffgillnlkgfoaclfi" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto min-w-[235px] h-12 sm:h-14 text-lg sm:text-xl px-8 rounded-md shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all ">
-              Try Gemfolders for Free
-            </Button>
-          </div>
-          <p className="text-sm text-secondary/60 font-medium">
-            No credit card needed
+          <motion.a
+            href={CHROME_STORE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center rounded-full bg-primary px-4 py-2 text-[15px] font-medium text-white transition-opacity hover:opacity-90"
+            whileHover={
+              prefersReducedMotion ? undefined : { scale: 1.035, y: -1 }
+            }
+            whileTap={prefersReducedMotion ? undefined : { scale: 0.98 }}
+            transition={{ type: "spring", stiffness: 420, damping: 28 }}
+          >
+            <Plus className="mr-1 size-3 shrink-0 stroke-3" aria-hidden />
+            Add to Chrome
+          </motion.a>
+          <p className="mt-2 block text-xs text-neutral-500">
+            Free · No credit card
           </p>
         </motion.div>
-      </div>
-
+      </motion.header>
     </section>
   );
 };

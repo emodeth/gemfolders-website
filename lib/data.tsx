@@ -8,11 +8,7 @@ export const navLinks = [
 
 export const featuresData = [
   {
-    title: (
-      <>
-        <span className="text-primary">Organize</span> your Chats
-      </>
-    ),
+    title: "Organize your Chats",
     description:
       "Create folders and sub-folders to keep your chats structured. Drag and drop conversations to organize them exactly how you want. Sync your structure across all your devices seamlessly.",
     mediaSrc: "/videos/gemfolders_video_organize.mp4",
@@ -27,11 +23,7 @@ export const featuresData = [
     ],
   },
   {
-    title: (
-      <>
-        <span className="text-primary">Bookmark</span> Important Items
-      </>
-    ),
+    title: "Bookmark Important Items",
     description:
       "Save specific messages or entire chats with a single click. Build your personal library of prompts and responses for quick access whenever you need them.",
     mediaSrc: "/videos/gemfolders_video_bookmark.mp4",
@@ -42,11 +34,7 @@ export const featuresData = [
     tags: ["Quick Access", "Searchable", "Tags"],
   },
   {
-    title: (
-      <>
-        <span className="text-primary">Native</span> Sidebar Integration
-      </>
-    ),
+    title: "Native Sidebar Integration",
     description:
       "Manage everything directly from Gemini's sidebar. Our extension blends perfectly with the native interface, giving you powerful tools without breaking your flow.",
     mediaSrc: "/videos/gemfolders_video_native.mp4",
@@ -61,7 +49,7 @@ export const featuresData = [
 export const pricingPlans = [
   {
     name: "Monthly",
-    price: "$4.99",
+    price: "$5",
     period: "/ month",
     description: "Perfect for trying out the extension",
     features: [
@@ -76,7 +64,7 @@ export const pricingPlans = [
   },
   {
     name: "Yearly",
-    price: "$29.99",
+    price: "$30",
     period: "/ year",
     description: "Save 50% compared to monthly",
     features: [
@@ -91,7 +79,7 @@ export const pricingPlans = [
   },
   {
     name: "Lifetime",
-    price: "$49.99",
+    price: "$50",
     period: "one-time",
     description: "Pay once, use forever",
     features: [
@@ -106,56 +94,67 @@ export const pricingPlans = [
   },
 ];
 
+export const socialProof = {
+  title: "Loved by Gemini users",
+  subtitle:
+    "Folders and bookmarks that actually stick with your workflow—not another tab to babysit.",
+  statDetail: "Used from students to teams who live in Gemini",
+  testimonials: [
+    {
+      quote:
+        "I came across this randomly. smooth usage and lot better than the others I tried.",
+      name: "Cem C.",
+      role: "Software Engineer",
+    },
+    {
+      quote:
+        "Bookmarks for specific replies saved me hours. It’s the sidebar upgrade Gemini should’ve shipped.",
+      name: "Olcay Y.",
+      role: "Software engineer",
+    },
+    {
+      quote:
+        "Clean, fast, and stays out of the way. My workspace finally matches how I think about projects.",
+      name: "Chris L.",
+      role: "Founder",
+    },
+  ],
+} as const;
+
 export const faqs = [
   {
-    question: "Is my data safe?",
+    question: "Do I need a credit card to sign up?",
     answer:
-      "Yes, your data is completely safe. We strictly follow privacy-first principles. Your chats and folder organization structures are primarily stored locally on your device. Any data synced for premium features is encrypted and securely stored. We never sell your personal data.",
+      "No. Installing Gemfolders from the Chrome Web Store is free, and you can organize chats without entering a card. You only need a payment method if you choose a paid plan.",
   },
   {
-    question: "Can I cancel it whenever I want?",
+    question: "Can I cancel at anytime?",
     answer:
-      "Absolutely. You can cancel your subscription at any time directly from your dashboard. If you cancel, you will maintain access to premium features until the end of your billing cycle. There are no cancellation fees.",
+      "Yes. You can cancel your subscription any time from your billing dashboard. You keep premium access until the end of your current billing period, and there are no cancellation fees.",
   },
   {
-    question: "What is your privacy policy?",
+    question: "Why should I use Gemfolders?",
     answer:
-      "Our privacy policy is simple: You own your data. We do not track your chat content or personal information. We only collect minimal usage statistics to improve the application stability. For a detailed breakdown, please visit our Privacy Policy page.",
+      "Gemfolders adds folders, bookmarks, and optional sync to Gemini so conversations stay structured. Less hunting through threads, more time actually using the assistant.",
   },
   {
-    question: "I have another question",
+    question: "Do I need a separate account for Gemfolders?",
     answer:
-      "We'd love to hear from you! If you have any other questions or need support, please contact our support team. We generally reply to all inquiries within 24 hours.",
+      "No. You use your normal Google account and Gemini as usual. The extension runs in the sidebar alongside Gemini—no extra login beyond what you already use.",
+  },
+  {
+    question: "Can I use Gemfolders on multiple devices?",
+    answer:
+      "Yes. Premium plans include sync so your folder layout can stay consistent across browsers where you use the extension while signed in.",
+  },
+  {
+    question: "Where is my data stored?",
+    answer:
+      "We take a privacy-first approach. Most organization data lives locally in your browser. Anything synced for premium features is encrypted in transit and stored securely. We don’t sell your personal data. See our Privacy Policy for details.",
   },
 ];
 
-export const ctaData = {
-  title: "Ready to clear the clutter?",
-  description:
-    "Install Gem today and join thousands of people who've found browser nirvana.",
-  buttonText: "Add Gem to Chrome Free",
-  secondaryText: "No credit card required. Cancel anytime.",
-};
-
-export const footerData = {
-  description:
-    "The Browser extension that brings order to your Gemini conversations.",
-  copyright: "© 2026 Gem Folders. All rights reserved.",
-  columns: [
-    {
-      title: "Product",
-      links: [
-        { label: "Features", href: "#features" },
-        { label: "Pricing", href: "#pricing" },
-        { label: "FAQ", href: "#faq" },
-      ],
-    },
-    {
-      title: "Legal",
-      links: [
-        { label: "Privacy Policy", href: "/legal/privacy" },
-        { label: "Terms of Service", href: "/legal/terms" },
-      ],
-    },
-  ],
-};
+export const closingSection = {
+  chromeStoreUrl:
+    "https://chromewebstore.google.com/detail/gemini-folders-bookmarks/dnlonnjaceadodcffgillnlkgfoaclfi",
+} as const;

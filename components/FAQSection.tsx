@@ -2,58 +2,73 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import FAQItem from "./FAQItem";
 import { faqs } from "@/lib/data";
 
+const CONTACT_EMAIL = "emirhankeskindev@gmail.com";
+
 const FAQSection = () => {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const handleToggle = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
   return (
-    <section id="faq" className="py-24 relative overflow-hidden bg-background">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl pointer-events-none -z-10">
-        <div className="absolute top-1/3 right-0 w-96 h-96 bg-primary/5 rounded-full blur-[120px]" />
-        <div className="absolute bottom-0 left-0 w-80 h-80 bg-accent/5 rounded-full blur-[100px]" />
-      </div>
-
-      <div className="container px-6 mx-auto max-w-4xl">
-        <div className="text-center mb-16 space-y-4">
+    <section
+      id="faq"
+      className="relative overflow-hidden py-20 md:py-24 pb-0! dark:bg-zinc-950"
+    >
+      <div className="container mx-auto max-w-2xl px-6">
+        <div className="mb-10 flex flex-col items-center text-center md:mb-12">
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-foreground"
+            transition={{ duration: 0.45 }}
+            className="text-4xl font-medium tracking-tight text-black dark:text-white md:text-[62px]"
           >
-            Frequently Asked <span className="text-primary">Questions</span>
+            FAQ
           </motion.h2>
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-lg text-secondary"
+            transition={{ duration: 0.45, delay: 0.06 }}
+            className="mt-3 max-w-md text-base text-[#4B5563] dark:text-zinc-400 md:text-2xl"
           >
-            Have questions? We&apos;re here to help.
+            Have a question? We have answers.
           </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.45, delay: 0.12 }}
+            className="mt-6"
+          >
+            <Link
+              href={`mailto:${CONTACT_EMAIL}`}
+              className="inline-flex items-center gap-2 rounded-full bg-black px-5 py-2 font-bold text-base text-white transition-colors hover:bg-neutral-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
+            >
+              Contact us
+              <ArrowRight className="size-4" aria-hidden />
+            </Link>
+          </motion.div>
         </div>
 
-        <div className="max-w-3xl mx-auto">
-          <div className="divide-y divide-border">
-            {faqs.map((faq, index) => (
-              <FAQItem
-                key={faq.question}
-                index={index}
-                question={faq.question}
-                answer={faq.answer}
-                isOpen={openIndex === index}
-                onClick={() => handleToggle(index)}
-              />
-            ))}
-          </div>
+        <div className="flex flex-col gap-1">
+          {faqs.map((faq, index) => (
+            <FAQItem
+              key={faq.question}
+              index={index}
+              question={faq.question}
+              answer={faq.answer}
+              isOpen={openIndex === index}
+              onClick={() => handleToggle(index)}
+            />
+          ))}
         </div>
       </div>
     </section>
