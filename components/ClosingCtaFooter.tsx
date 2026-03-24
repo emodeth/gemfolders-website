@@ -88,10 +88,6 @@ export default function ClosingCtaFooter() {
           target="_blank"
           rel="noopener noreferrer"
           className="mt-4 flex items-center justify-center gap-1 rounded-full bg-primary px-5 py-2 text-[15px] font-bold text-white transition-colors hover:bg-neutral-800 dark:bg-white dark:text-black dark:hover:bg-neutral-200"
-          whileHover={
-            reducedMotion ? undefined : { scale: 1.03, transition: { duration: 0.2 } }
-          }
-          whileTap={reducedMotion ? undefined : { scale: 0.98 }}
         >
           Add to Chrome
           <ArrowRight className="size-3 shrink-0" strokeWidth={3} aria-hidden />

@@ -1,30 +1,50 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { Plus } from "lucide-react";
+import {
+  heroBodyVariants,
+  heroContainerVariants,
+  heroCtaVariants,
+  heroTitleContainerVariants,
+  heroTitleLineVariants,
+} from "@/lib/hero-motion";
 
 const CHROME_STORE_URL =
   "https://chromewebstore.google.com/detail/gemini-folders-bookmarks/dnlonnjaceadodcffgillnlkgfoaclfi";
 
 const HeroSection = () => {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
     <section className="relative overflow-hidden pt-20 md:pt-16 pb-0!">
-      <header className="mx-auto my-20 flex max-w-xl flex-col items-center text-center text-balance md:my-24">
+      <motion.header
+        className="mx-auto my-20 flex max-w-xl flex-col items-center text-center text-balance md:my-24"
+        initial="hidden"
+        animate="visible"
+        variants={heroContainerVariants(prefersReducedMotion)}
+      >
         <motion.h1
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+          variants={heroTitleContainerVariants(prefersReducedMotion)}
           className="my-2 mb-4 text-4xl font-medium tracking-tight text-foreground sm:text-5xl md:text-[62px] md:leading-[1.09]"
         >
-          <span className="inline-block">Simple folders</span>
+          <motion.span
+            variants={heroTitleLineVariants(prefersReducedMotion)}
+            className="inline-block"
+          >
+            Simple folders
+          </motion.span>
           <br />
-          <span className="inline-block">for Gemini chats</span>
+          <motion.span
+            variants={heroTitleLineVariants(prefersReducedMotion)}
+            className="inline-block"
+          >
+            for Gemini chats
+          </motion.span>
         </motion.h1>
 
         <motion.p
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.45, delay: 0.06, ease: [0.22, 1, 0.36, 1] }}
+          variants={heroBodyVariants(prefersReducedMotion)}
           className="max-2w-md px-2 text-[15px] text-neutral-600 md:text-[24px] tracking-tighter "
         >
           With Gemfolders your threads never get lost. Built for clarity, right
@@ -32,25 +52,28 @@ const HeroSection = () => {
         </motion.p>
 
         <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.45, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
+          variants={heroCtaVariants(prefersReducedMotion)}
           className="mt-4 flex flex-col items-center"
         >
-          <a
+          <motion.a
             href={CHROME_STORE_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center rounded-full bg-primary px-4 py-2 text-[15px] font-medium text-white transition-opacity hover:opacity-90"
+            whileHover={
+              prefersReducedMotion ? undefined : { scale: 1.035, y: -1 }
+            }
+            whileTap={prefersReducedMotion ? undefined : { scale: 0.98 }}
+            transition={{ type: "spring", stiffness: 420, damping: 28 }}
           >
             <Plus className="mr-1 size-3 shrink-0 stroke-3" aria-hidden />
             Add to Chrome
-          </a>
+          </motion.a>
           <p className="mt-2 block text-xs text-neutral-500">
             Free · No credit card
           </p>
         </motion.div>
-      </header>
+      </motion.header>
     </section>
   );
 };
