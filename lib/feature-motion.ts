@@ -66,6 +66,29 @@ export function featureTextColumnVariants(
   };
 }
 
+/** Stagger checklist rows */
+export function featureListContainerVariants(
+  reducedMotion: boolean | null
+): Variants {
+  if (reducedMotion) {
+    return {
+      hidden: {},
+      visible: {
+        transition: { staggerChildren: 0, delayChildren: 0 },
+      },
+    };
+  }
+  return {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.065,
+        delayChildren: 0,
+      },
+    },
+  };
+}
+
 export function featureTextItemVariants(
   reducedMotion: boolean | null
 ): Variants {

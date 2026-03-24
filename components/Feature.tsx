@@ -1,5 +1,6 @@
 "use client";
 
+import type { ReactNode } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import {
   featureBlockViewport,
@@ -9,26 +10,12 @@ import {
   featureTextItemVariants,
 } from "@/lib/feature-motion";
 import Image from "next/image";
-import {
-  ArrowRight,
-  Bookmark,
-  Layers,
-  LayoutGrid,
-  ListOrdered,
-  Sparkles,
-  type LucideIcon,
-} from "lucide-react";
-
-const checklistIcons: LucideIcon[] = [
-  ListOrdered,
-  Layers,
-  Bookmark,
-  LayoutGrid,
-  Sparkles,
-];
+import FeatureChecklistBlock from "./FeatureChecklistBlock";
+import FeatureCtaBlock from "./FeatureCtaBlock";
+import FeatureTagRow from "./FeatureTagRow";
 
 interface FeatureProps {
-  title: React.ReactNode;
+  title: ReactNode;
   description: string;
   mediaSrc: string;
   mediaType?: "image" | "video";
@@ -66,6 +53,10 @@ const Feature = ({
     right: "object-right",
   }[mediaPosition];
 
+  const ctaIsExternal =
+    typeof ctaLink === "string" &&
+    (ctaLink.startsWith("http://") || ctaLink.startsWith("https://"));
+
   return (
     <section className="overflow-hidden py-16 font-sans antialiased  dark:bg-neutral-950">
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
@@ -77,22 +68,45 @@ const Feature = ({
           variants={featureRowContainerVariants(prefersReducedMotion)}
         >
           <motion.div
-            className="w-full flex-1 text-left"
+            className="flex w-full flex-1 flex-col gap-5 text-left"
             variants={featureTextColumnVariants(prefersReducedMotion)}
           >
             <motion.h3
               variants={featureTextItemVariants(prefersReducedMotion)}
-              className="mb-3 text-[28px] font-semibold tracking-tight md:leading-[1.15] dark:text-slate-100"
+              className="text-[28px] font-semibold tracking-tight md:leading-[1.15] dark:text-slate-100"
             >
               {title}
             </motion.h3>
 
             <motion.p
               variants={featureTextItemVariants(prefersReducedMotion)}
-              className="mb-4 max-w-xl text-base font-medium leading-relaxed tracking-tighter text-neutral-600 dark:text-neutral-600"
+              className="max-w-xl text-base font-medium leading-relaxed tracking-tighter text-neutral-600 dark:text-neutral-600"
             >
               {description}
             </motion.p>
+
+            {tags && tags.length > 0 ? (
+              <FeatureTagRow
+                tags={tags}
+                prefersReducedMotion={prefersReducedMotion}
+              />
+            ) : null}
+
+            {checklist && checklist.length > 0 ? (
+              <FeatureChecklistBlock
+                items={checklist}
+                prefersReducedMotion={prefersReducedMotion}
+              />
+            ) : null}
+
+            {ctaLink && ctaText ? (
+              <FeatureCtaBlock
+                href={ctaLink}
+                label={ctaText}
+                isExternal={ctaIsExternal}
+                prefersReducedMotion={prefersReducedMotion}
+              />
+            ) : null}
           </motion.div>
 
           <motion.div
