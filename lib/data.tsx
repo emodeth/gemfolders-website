@@ -96,24 +96,34 @@ export const pricingPlans = [
 
 export const faqs = [
   {
-    question: "Is my data safe?",
+    question: "Do I need a credit card to sign up?",
     answer:
-      "Yes, your data is completely safe. We strictly follow privacy-first principles. Your chats and folder organization structures are primarily stored locally on your device. Any data synced for premium features is encrypted and securely stored. We never sell your personal data.",
+      "No. Installing Gemfolders from the Chrome Web Store is free, and you can organize chats without entering a card. You only need a payment method if you choose a paid plan.",
   },
   {
-    question: "Can I cancel it whenever I want?",
+    question: "Can I cancel at anytime?",
     answer:
-      "Absolutely. You can cancel your subscription at any time directly from your dashboard. If you cancel, you will maintain access to premium features until the end of your billing cycle. There are no cancellation fees.",
+      "Yes. You can cancel your subscription any time from your billing dashboard. You keep premium access until the end of your current billing period, and there are no cancellation fees.",
   },
   {
-    question: "What is your privacy policy?",
+    question: "Why should I use Gemfolders?",
     answer:
-      "Our privacy policy is simple: You own your data. We do not track your chat content or personal information. We only collect minimal usage statistics to improve the application stability. For a detailed breakdown, please visit our Privacy Policy page.",
+      "Gemfolders adds folders, bookmarks, and optional sync to Gemini so conversations stay structured. Less hunting through threads, more time actually using the assistant.",
   },
   {
-    question: "I have another question",
+    question: "Do I need a separate account for Gemfolders?",
     answer:
-      "We'd love to hear from you! If you have any other questions or need support, please contact our support team. We generally reply to all inquiries within 24 hours.",
+      "No. You use your normal Google account and Gemini as usual. The extension runs in the sidebar alongside Gemini—no extra login beyond what you already use.",
+  },
+  {
+    question: "Can I use Gemfolders on multiple devices?",
+    answer:
+      "Yes. Premium plans include sync so your folder layout can stay consistent across browsers where you use the extension while signed in.",
+  },
+  {
+    question: "Where is my data stored?",
+    answer:
+      "We take a privacy-first approach. Most organization data lives locally in your browser. Anything synced for premium features is encrypted in transit and stored securely. We don’t sell your personal data. See our Privacy Policy for details.",
   },
 ];
 
