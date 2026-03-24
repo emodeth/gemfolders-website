@@ -1,38 +1,21 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import Link from "next/link";
-import Logo from "./Logo";
-import { Button } from "./ui/button";
+import { usePathname } from "next/navigation";
 import { navLinks } from "@/lib/data";
 import MobileNavbar from "./MobileNavbar";
+import Logo from "./Logo";
+
+const CHROME_STORE_URL =
+  "https://chromewebstore.google.com/detail/gemini-folders-bookmarks/dnlonnjaceadodcffgillnlkgfoaclfi";
 
 const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const pathname = usePathname();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 100);
-    };
-
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
-    handleScroll();
-    handleResize();
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleScroll = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string,
+  ) => {
     if (href.startsWith("#")) {
       e.preventDefault();
       const element = document.querySelector(href);
@@ -42,79 +25,43 @@ const Navbar = () => {
     }
   };
 
-  const showScrolled = isScrolled || isMobile;
-
   return (
-    <header className="flex items-center justify-between w-full max-w-5xl px-10 mx-auto bg-transparent py-7">
-      <div className="hidden min-[769px]:flex flex-row items-center justify-center gap-2">
-        <Logo className="text-4xl" />
-      </div>
+    <header className="pointer-events-none fixed inset-x-0 top-0 z-50 flex justify-center px-4 pt-6">
+      <div className="pointer-events-auto shadow-xs mx-auto flex w-full max-w-[min(100%,28rem)] items-center justify-between rounded-full bg-white/90 p-1 backdrop-blur-sm dark:bg-neutral-800/90 dark:shadow-2xl dark:shadow-black md:w-fit md:max-w-none md:justify-center">
+        <Logo />
 
-      <div className="fixed inset-x-0 z-50 flex items-center justify-center top-6 pointer-events-none">
-        <div
-          className={`pointer-events-auto mx-4 flex w-full items-center justify-center overflow-hidden rounded-full backdrop-blur-md transition-all duration-300 ease-out min-[769px]:w-auto ${showScrolled
-            ? "bg-background/80 dark:bg-background/60 shadow-md px-4 py-3 min-[769px]:px-3 min-[769px]:py-2.5"
-            : "bg-background/40 dark:bg-background/20 px-3 py-2.5 min-[769px]:p-1.5 min-[769px]:py-2"
-            }`}
-          style={{
-            boxShadow: showScrolled
-              ? "rgba(17, 24, 28, 0.08) 0px 0px 0px 1px, rgba(17, 24, 28, 0.08) 0px 1px 2px -1px, rgba(17, 24, 28, 0.04) 0px 2px 4px"
-              : "rgba(17, 24, 28, 0.08) 0px 0px 0px 0px, rgba(17, 24, 28, 0.08) 0px 0px 0px 0px, rgba(17, 24, 28, 0.04) 0px 0px 0px",
-          }}
-        >
-          <ul className="flex flex-row justify-between items-center w-full h-full gap-6 min-[769px]:flex-row min-[769px]:justify-start min-[769px]:gap-1">
-            <li className="flex min-[769px]:hidden items-center">
-              <Logo className="text-xl" />
-            </li>
-
-            {navLinks.map((link) => (
-              <li
-                key={link.label}
-                className="hidden items-center justify-center px-2 py-0.5 min-[769px]:flex font-medium"
-              >
+        <ul className="hidden items-center justify-end font-medium md:flex">
+          {navLinks.map((link) => {
+            const isCurrent =
+              !link.href.startsWith("#") && pathname === link.href;
+            return (
+              <li key={link.label}>
                 <Link
                   href={link.href}
+                  aria-current={isCurrent ? "page" : undefined}
                   onClick={(e) => handleScroll(e, link.href)}
-                  className="font-medium text-muted-foreground transition-all hover:text-muted-foreground/70"
+                  className="block px-4 py-2 text-foreground text-sm opacity-70 transition-opacity hover:opacity-100 aria-[current=page]:opacity-100"
                 >
                   {link.label}
                 </Link>
               </li>
-            ))}
-
-            <div
-              className={`hidden min-[769px]:block overflow-hidden transition-all duration-500 ease-in-out ${isScrolled ? "max-w-[150px] opacity-100 translate-x-0" : "max-w-0 opacity-0 translate-x-12"
-                }`}
+            );
+          })}
+          <li>
+            <a
+              href={CHROME_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-2 flex shrink-0 items-center gap-1 whitespace-nowrap rounded-full bg-primary px-4 py-2 text-sm text-primary-foreground transition-opacity hover:opacity-90 aria-[current=page]:opacity-100 dark:text-white md:ml-4"
             >
-              <Button
-                as="a"
-                href="https://chromewebstore.google.com/detail/gemini-folders-bookmarks/dnlonnjaceadodcffgillnlkgfoaclfi"
-                target="_blank"
-                rel="noopener noreferrer"
-                size="sm"
-                className="whitespace-nowrap text-[16px]"
-              >
-                Download
-              </Button>
-            </div>
+              Download
+            </a>
+          </li>
+        </ul>
 
-            <li className="flex min-[769px]:hidden items-center gap-2">
-              <MobileNavbar />
-            </li>
-          </ul>
+        <div className="flex shrink-0 items-center pr-0.5 md:hidden">
+          <MobileNavbar />
         </div>
-      </div>
-
-      <div className="hidden min-[769px]:flex flex-row items-center justify-center gap-2">
-        <Button
-          as="a"
-          href="https://chromewebstore.google.com/detail/gemini-folders-bookmarks/dnlonnjaceadodcffgillnlkgfoaclfi"
-          target="_blank"
-          rel="noopener noreferrer"
-          size="sm"
-          className="whitespace-nowrap px-6 py-2.5 rounded-sm cursor-pointer">
-          Add to Browser
-        </Button>
       </div>
     </header>
   );

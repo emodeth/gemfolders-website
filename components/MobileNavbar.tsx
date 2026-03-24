@@ -4,12 +4,14 @@ import { createPortal } from "react-dom";
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Button } from "./ui/button";
 import { navLinks } from "@/lib/data";
 import { Menu, X } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 
 const MobileNavbar = () => {
+  const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -33,7 +35,10 @@ const MobileNavbar = () => {
     };
   }, [isMobileMenuOpen]);
 
-  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleScroll = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string,
+  ) => {
     setIsMobileMenuOpen(false);
     if (href.startsWith("#")) {
       e.preventDefault();
@@ -53,7 +58,7 @@ const MobileNavbar = () => {
           target="_blank"
           rel="noopener noreferrer"
           size="sm"
-          className="whitespace-nowrap text-xs h-8 px-3"
+          className="h-8 whitespace-nowrap rounded-full border-0 bg-primary px-3 text-xs font-semibold text-primary-foreground hover:opacity-90 dark:text-white"
         >
           Download
         </Button>
@@ -62,7 +67,11 @@ const MobileNavbar = () => {
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           className="p-1 text-muted-foreground hover:text-foreground transition-colors"
         >
-          {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          {isMobileMenuOpen ? (
+            <X className="w-6 h-6" />
+          ) : (
+            <Menu className="w-6 h-6" />
+          )}
         </button>
       </div>
 
@@ -71,7 +80,7 @@ const MobileNavbar = () => {
           {isMobileMenuOpen && (
             <motion.div
               key="mobile-menu-wrapper"
-              className="fixed inset-x-0 top-24 z-[60] flex justify-center pointer-events-none"
+              className="fixed inset-x-0 top-[5.25rem] z-[60] flex justify-center pointer-events-none"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -83,23 +92,27 @@ const MobileNavbar = () => {
                 animate={{ y: 0, scale: 1 }}
                 exit={{ y: -10, scale: 0.95 }}
                 transition={{ duration: 0.2 }}
-                className="pointer-events-auto w-full max-w-5xl mx-4 flex flex-col bg-background/80 dark:bg-background/60 backdrop-blur-xl shadow-lg rounded-2xl p-4 lg:hidden"
-                style={{
-                  boxShadow:
-                    "rgba(17, 24, 28, 0.08) 0px 0px 0px 1px, rgba(17, 24, 28, 0.08) 0px 1px 2px -1px, rgba(17, 24, 28, 0.04) 0px 2px 4px",
-                }}
+                className="pointer-events-auto mx-4 flex w-full max-w-[min(100%,28rem)] flex-col rounded-md bg-white/90 p-1 shadow-xs backdrop-blur-sm dark:bg-neutral-800/90 dark:shadow-2xl dark:shadow-black lg:hidden"
               >
-                <nav className="flex flex-col gap-2 items-start justify-center flex-1 w-full">
-                  {navLinks.map((link) => (
-                    <Link
-                      key={link.label}
-                      href={link.href}
-                      onClick={(e) => handleScroll(e, link.href)}
-                      className="w-full px-4 py-3 text-lg font-medium text-foreground hover:bg-muted/50 rounded-xl transition-colors"
-                    >
-                      {link.label}
-                    </Link>
-                  ))}
+                <nav
+                  className="flex w-full flex-col font-medium"
+                  aria-label="Main"
+                >
+                  {navLinks.map((link) => {
+                    const isCurrent =
+                      !link.href.startsWith("#") && pathname === link.href;
+                    return (
+                      <Link
+                        key={link.label}
+                        href={link.href}
+                        aria-current={isCurrent ? "page" : undefined}
+                        onClick={(e) => handleScroll(e, link.href)}
+                        className="block w-full px-4 py-2 text-sm text-foreground  transition-opacity aria-[current=page]:opacity-100"
+                      >
+                        {link.label}
+                      </Link>
+                    );
+                  })}
                 </nav>
               </motion.div>
             </motion.div>
