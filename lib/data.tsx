@@ -49,7 +49,7 @@ export const featuresData = [
 export const pricingPlans = [
   {
     name: "Monthly",
-    price: "$4.99",
+    price: "$5",
     period: "/ month",
     description: "Perfect for trying out the extension",
     features: [
@@ -64,7 +64,7 @@ export const pricingPlans = [
   },
   {
     name: "Yearly",
-    price: "$29.99",
+    price: "$30",
     period: "/ year",
     description: "Save 50% compared to monthly",
     features: [
@@ -79,7 +79,7 @@ export const pricingPlans = [
   },
   {
     name: "Lifetime",
-    price: "$49.99",
+    price: "$50",
     period: "one-time",
     description: "Pay once, use forever",
     features: [
