@@ -140,17 +140,17 @@ export const faqs = [
   {
     question: "Do I need a separate account for Gemfolders?",
     answer:
-      "No. You use your normal Google account and Gemini as usual. The extension runs in the sidebar alongside Gemini—no extra login beyond what you already use.",
+      "No. You can use Gemfolders without any account. If you want higher limits or sync, sign in from the extension's Account tab with your Google account or a Magic Link. There's no separate password to create.",
   },
   {
     question: "Can I use Gemfolders on multiple devices?",
     answer:
-      "Yes. Premium plans include sync so your folder layout can stay consistent across browsers where you use the extension while signed in.",
+      "Yes. Sign in to the extension on each computer and your folders and bookmarks sync between them. Sync is included with free accounts too.",
   },
   {
     question: "Where is my data stored?",
     answer:
-      "We take a privacy-first approach. Most organization data lives locally in your browser. Anything synced for premium features is encrypted in transit and stored securely. We don’t sell your personal data. See our Privacy Policy for details.",
+      "We take a privacy-first approach. If you don't sign in, your folders and bookmarks live only in your browser. If you sign in, they're also synced to your Gemfolders account, encrypted in transit and stored securely. We don’t sell your personal data. See our Privacy Policy for details.",
   },
 ];
 

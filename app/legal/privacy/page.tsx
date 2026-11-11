@@ -8,7 +8,7 @@ export default function PrivacyPolicy() {
           Privacy Policy
         </h1>
         <p className="text-gray-500 font-medium text-sm">
-          Last updated: January 2026
+          Last updated: November 2026
         </p>
       </div>
 
@@ -42,6 +42,12 @@ export default function PrivacyPolicy() {
                 <span className="font-bold text-black">Payment Information:</span> We collect payment details to process your orders securely. However, we do not store your payment information on our servers. Payments are processed by trusted third-party payment processors.
               </span>
             </li>
+            <li className="flex items-start">
+              <span className="mr-2 mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-black"></span>
+              <span>
+                <span className="font-bold text-black">Folders and Bookmarks:</span> If you sign in, the folders and bookmarks you create (including folder names and the titles and links of chats you organize) are synced to your account so you can use them on other devices. If you don&apos;t sign in, this data stays only in your browser. We never collect the content of your Gemini conversations.
+              </span>
+            </li>
           </ul>
         </section>
 
@@ -62,6 +68,12 @@ export default function PrivacyPolicy() {
               <span className="mr-2 mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-black"></span>
               <span>
                 <span className="font-bold text-black">Payment Processing:</span> We use Polar.sh for payment processing. We do not store your credit card details.
+              </span>
+            </li>
+            <li className="flex items-start">
+              <span className="mr-2 mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-black"></span>
+              <span>
+                <span className="font-bold text-black">Authentication and Storage:</span> We use Supabase to sign you in and to store your account and synced folders and bookmarks.
               </span>
             </li>
             <li className="flex items-start">
